@@ -29,6 +29,7 @@ body {
   color: var(--text);
   background: var(--bg);
   font-family: "DM Sans", Arial, sans-serif;
+  animation: pageFade 520ms ease both;
 }
 
 body.drawer-open {
@@ -85,6 +86,12 @@ img {
   background: var(--primary);
   box-shadow: 0 12px 30px rgba(249, 115, 22, 0.26);
   font-weight: 800;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.brand-mark:hover {
+  transform: translateY(-2px) rotate(-2deg);
+  box-shadow: 0 16px 34px rgba(249, 115, 22, 0.32);
 }
 
 .desktop-nav {
@@ -115,6 +122,13 @@ img {
   color: var(--text);
   background: var(--surface);
   cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.icon-button:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 26px rgba(80, 38, 12, 0.12);
+  transform: translateY(-2px);
 }
 
 .cart-pill {
@@ -128,6 +142,12 @@ img {
   color: #fff;
   background: var(--text);
   cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.cart-pill:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 .cart-pill strong {
@@ -153,6 +173,7 @@ img {
 
 .hero-copy {
   max-width: 570px;
+  animation: riseIn 680ms ease 80ms both;
 }
 
 .eyebrow {
@@ -222,6 +243,7 @@ h2 {
   padding: 0 22px;
   font-weight: 800;
   cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .primary-button {
@@ -232,12 +254,19 @@ h2 {
 
 .primary-button:hover {
   background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(249, 115, 22, 0.3);
 }
 
 .secondary-button {
   color: var(--text);
   background: var(--surface);
   border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
 .full-width {
@@ -250,6 +279,7 @@ h2 {
   overflow: hidden;
   border-radius: 28px;
   box-shadow: var(--shadow);
+  animation: riseIn 760ms ease 180ms both;
 }
 
 .hero-media img {
@@ -272,6 +302,7 @@ h2 {
   color: #fff;
   background: rgba(33, 24, 19, 0.78);
   backdrop-filter: blur(12px);
+  animation: floatIn 700ms ease 420ms both;
 }
 
 .status-card small {
@@ -294,6 +325,11 @@ h2 {
   margin: 0 auto 24px;
 }
 
+.quick-strip,
+.section-panel {
+  animation: riseIn 620ms ease both;
+}
+
 .quick-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -307,6 +343,12 @@ h2 {
 .quick-strip article {
   padding: 22px;
   background: var(--surface);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.quick-strip article:hover {
+  background: #fffaf4;
+  transform: translateY(-2px);
 }
 
 .quick-strip strong {
@@ -352,6 +394,12 @@ h2 {
   width: 100%;
   border-radius: 18px;
   object-fit: cover;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.gallery-grid img:hover {
+  box-shadow: 0 14px 34px rgba(80, 38, 12, 0.18);
+  transform: scale(1.035);
 }
 
 .visit-section {
@@ -389,6 +437,14 @@ h2 {
   background: transparent;
   font-weight: 800;
   cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.bottom-nav a:hover,
+.bottom-nav button:hover {
+  color: var(--primary-dark);
+  background: var(--bg-strong);
+  transform: translateY(-2px);
 }
 
 .bottom-nav span {
@@ -456,5 +512,47 @@ h2 {
   .section-panel {
     padding: 24px 18px;
     border-radius: 20px;
+  }
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
   }
 }

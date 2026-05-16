@@ -1,5 +1,5 @@
 (function () {
-  const ORDER_KEY = "dobara_demo_orders_v1";
+  const ORDER_KEY = "dobara_pickup_orders_v1";
   const params = new URLSearchParams(window.location.search);
   const orderNumber = params.get("order");
   const orders = readJson(ORDER_KEY, []);
@@ -10,9 +10,9 @@
   const summaryEl = document.querySelector("[data-track-summary]");
 
   if (!order) {
-    orderEl.textContent = "No demo order found";
-    metaEl.textContent = "Create a demo pickup order from the menu to preview tracking.";
-    summaryEl.innerHTML = `<a class="primary-button full-width" href="index.html#menu">Start demo order</a>`;
+    orderEl.textContent = "No pickup order found";
+    metaEl.textContent = "Create a pickup order from the menu to preview tracking.";
+    summaryEl.innerHTML = `<a class="primary-button full-width" href="index.html#menu">Start pickup order</a>`;
     return;
   }
 

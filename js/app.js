@@ -1,6 +1,6 @@
 (function () {
   const CART_KEY = "dobara_cart_v1";
-  const ORDER_KEY = "dobara_demo_orders_v1";
+  const ORDER_KEY = "dobara_pickup_orders_v1";
   const PROFILE_KEY = "dobara_customer_profile_v1";
   const TAX_RATE = 0.05;
   const catalog = window.DOBARA_MENU;
@@ -28,7 +28,8 @@
     itemDetail: document.querySelector("[data-item-detail]"),
     successDialog: document.querySelector("[data-success-dialog]"),
     successOrder: document.querySelector("[data-success-order]"),
-    successTrack: document.querySelector("[data-success-track]")
+    successTrack: document.querySelector("[data-success-track]"),
+    successWhatsApp: document.querySelector("[data-success-whatsapp]")
   };
 
   init();
@@ -236,7 +237,7 @@
     const subtotal = lines.reduce((sum, line) => sum + line.item.price * line.qty, 0);
     const tax = Math.round(subtotal * TAX_RATE);
     const order = {
-      orderNumber: `DOB-DEMO-${Date.now().toString().slice(-6)}`,
+      orderNumber: `DOB-PICKUP-${Date.now().toString().slice(-6)}`,
       createdAt: new Date().toISOString(),
       customer: { name, phone },
       fulfillmentMode: "pickup",
@@ -248,12 +249,15 @@
     orders.unshift(order);
     localStorage.setItem(ORDER_KEY, JSON.stringify(orders.slice(0, 8)));
     localStorage.setItem(PROFILE_KEY, JSON.stringify({ name, phone }));
+    const whatsappUrl = buildWhatsAppUrl(order);
     state.cart = [];
     saveCart();
     renderCart();
     closeCart();
     els.successOrder.textContent = order.orderNumber;
     els.successTrack.href = `track.html?order=${encodeURIComponent(order.orderNumber)}`;
+    els.successWhatsApp.href = whatsappUrl;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     els.successDialog.showModal();
   }
 
@@ -304,6 +308,23 @@
 
   function rupee(value) {
     return `₹${value.toLocaleString("en-IN")}`;
+  }
+
+  function buildWhatsAppUrl(order) {
+    const lines = [
+      `Dobara cafe pickup order`,
+      `Order: ${order.orderNumber}`,
+      `Name: ${order.customer.name}`,
+      `Phone: ${order.customer.phone}`,
+      "",
+      "Items:",
+      ...order.items.map((item) => `${item.qty} x ${item.name} - ₹${item.price * item.qty}`),
+      "",
+      `Subtotal: ₹${order.pricing.subtotal}`,
+      `GST estimate: ₹${order.pricing.tax}`,
+      `Total: ₹${order.pricing.total}`
+    ];
+    return `https://wa.me/917007420970?text=${encodeURIComponent(lines.join("\n"))}`;
   }
 
   function escapeHtml(value) {

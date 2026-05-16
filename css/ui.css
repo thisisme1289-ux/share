@@ -26,6 +26,7 @@
   padding: 22px;
   background: var(--surface-soft);
   box-shadow: -20px 0 60px rgba(33, 24, 19, 0.22);
+  animation: drawerIn 260ms ease both;
 }
 
 .drawer-header {
@@ -67,6 +68,7 @@
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--surface);
+  animation: cardIn 260ms ease both;
 }
 
 .cart-line img {
@@ -103,6 +105,12 @@
   color: var(--text);
   background: var(--bg);
   cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.stepper button:hover {
+  color: #fff;
+  background: var(--primary);
 }
 
 .stepper span {
@@ -227,6 +235,7 @@
   gap: 14px;
   padding: 32px;
   text-align: center;
+  animation: popIn 300ms ease both;
 }
 
 .success-icon {
@@ -263,6 +272,7 @@
   padding: 28px;
   background: var(--surface);
   box-shadow: 0 16px 50px rgba(80, 38, 12, 0.08);
+  animation: cardIn 420ms ease both;
 }
 
 .track-card h1,
@@ -380,6 +390,12 @@
   color: #fff;
   background: var(--text);
   cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.button-row button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 .admin-list {
@@ -400,5 +416,38 @@
 
   .admin-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@keyframes drawerIn {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

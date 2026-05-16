@@ -72,7 +72,7 @@ Collect these values before implementation:
 - Tracking links must include a random token. Do not expose arbitrary order lookup by order number only.
 - Delivery orders must require a confirmed location and address.
 - Customers must not be able to create, update, or delete menu items, settings, orders, or analytics.
-- The site must still show a useful menu/demo state if Firebase is not configured, but payment/order actions should fail clearly.
+- The site must still show a useful menu preview if Firebase is not configured, but payment/order actions should fail clearly.
 
 ## Output Standard
 
@@ -89,4 +89,3 @@ The AI builder must also provide:
 - How to seed the menu.
 - How to create/admin-enable staff accounts.
 - How to test customer ordering, admin status updates, and tracking.
-

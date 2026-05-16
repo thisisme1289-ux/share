@@ -1,8 +1,8 @@
 # Dobara cafe Future Backend Upgrade
 
-This first implementation is a pickup-first demo site. It does not collect payments or create live orders.
+This first implementation is a pickup-first WhatsApp ordering site. It does not collect online payments or create Firebase orders yet.
 
-## Replace Demo Mode
+## Add Live Backend
 
 1. Add the real Firebase web config in `js/firebase-config.js`.
 2. Set `window.DOBARA_DEMO_MODE = false`.
