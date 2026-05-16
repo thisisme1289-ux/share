@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dobara cafe | Taste that brings you back</title>
+    <meta name="description" content="Order cafe favorites from Dobara cafe in Shantipuram, Phaphamau. Pickup demo ordering, menu, gallery, hours, and contact.">
+    <meta property="og:title" content="Dobara cafe">
+    <meta property="og:description" content="Taste that brings you back. Cafe favorites, pizza, burgers, fast food, and drinks.">
+    <meta property="og:image" content="images/og-cover.jpg">
+    <meta name="theme-color" content="#f97316">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="images/icons/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/ui.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="#home" aria-label="Dobara cafe home">
+          <span>DC</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#visit">Visit</a>
+          <a href="track.html">Track</a>
+        </nav>
+        <div class="topbar-actions">
+          <a class="icon-button" href="tel:+917007420970" aria-label="Call Dobara cafe" title="Call">
+            <span aria-hidden="true">☎</span>
+          </a>
+          <button class="cart-pill" type="button" data-open-cart>
+            <span>Cart</span>
+            <strong data-cart-count>0</strong>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section" id="home">
+          <div class="hero-copy">
+            <p class="eyebrow">Open daily · 10:00 AM - 9:00 PM</p>
+            <h1>Dobara cafe</h1>
+            <p class="hero-tagline">Taste that brings you back</p>
+            <p class="hero-text">Pizza, burgers, cafe snacks, fast food, and chilled drinks from Shantipuram Chauraha.</p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#menu">Start pickup order</a>
+              <a class="secondary-button" href="https://wa.me/917007420970" target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
+          </div>
+          <div class="hero-media" aria-label="Dobara cafe feature image">
+            <img src="images/temp/hero-cafe.jpg" alt="Dobara cafe placeholder feature">
+            <div class="status-card">
+              <span class="status-dot"></span>
+              <div>
+                <strong>Pickup demo ready</strong>
+                <small>Live payment will be connected later</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="quick-strip" aria-label="Cafe highlights">
+          <article>
+            <strong>₹300</strong>
+            <span>approx. for two</span>
+          </article>
+          <article>
+            <strong>Pickup</strong>
+            <span>demo checkout</span>
+          </article>
+          <article>
+            <strong>Fast food</strong>
+            <span>pizza, burgers, drinks</span>
+          </article>
+        </section>
+
+        <section class="section-panel" id="menu">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Cafe menu</p>
+              <h2>Pick your favorites</h2>
+            </div>
+            <div class="search-wrap">
+              <label for="menu-search">Search menu</label>
+              <input id="menu-search" type="search" placeholder="Search pizza, coffee, momos">
+            </div>
+          </div>
+          <div class="category-rail" data-category-rail aria-label="Menu categories"></div>
+          <div class="featured-row" data-featured-row></div>
+          <div class="menu-grid" data-menu-grid></div>
+          <p class="empty-state" data-empty-state hidden>No matching items. Try a different craving.</p>
+        </section>
+
+        <section class="section-panel split-section" id="gallery">
+          <div>
+            <p class="eyebrow">Gallery</p>
+            <h2>Warm plates, quick bites, cafe energy</h2>
+            <p class="muted">These are temporary placeholders. Replace the folder with real Dobara cafe food and interior photos when ready.</p>
+          </div>
+          <div class="gallery-grid">
+            <img src="images/temp/pizza.jpg" alt="Temporary pizza placeholder">
+            <img src="images/temp/burger.jpg" alt="Temporary burger placeholder">
+            <img src="images/temp/coffee.jpg" alt="Temporary coffee placeholder">
+            <img src="images/temp/cooler.jpg" alt="Temporary cooler placeholder">
+          </div>
+        </section>
+
+        <section class="section-panel visit-section" id="visit">
+          <div>
+            <p class="eyebrow">Visit us</p>
+            <h2>Shantipuram Chauraha, Phaphamau</h2>
+            <p>291, MI, SS Complex, Shantipuram Chauraha, Phaphamau, Teliarganj, Allahabad, UP</p>
+          </div>
+          <div class="visit-actions">
+            <a class="primary-button" href="tel:+917007420970">Call +91 7007420970</a>
+            <a class="secondary-button" href="https://wa.me/917007420970" target="_blank" rel="noreferrer">Message on WhatsApp</a>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="Mobile navigation">
+        <a href="#home" aria-label="Home"><span>⌂</span><small>Home</small></a>
+        <a href="#menu" aria-label="Menu"><span>☰</span><small>Menu</small></a>
+        <button type="button" data-open-cart aria-label="Open cart"><span>🛒</span><small>Cart</small></button>
+        <a href="track.html" aria-label="Track order"><span>◎</span><small>Track</small></a>
+      </nav>
+    </div>
+
+    <aside class="cart-drawer" data-cart-drawer aria-hidden="true">
+      <div class="drawer-backdrop" data-close-cart></div>
+      <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="drawer-header">
+          <div>
+            <p class="eyebrow">Pickup cart</p>
+            <h2 id="cart-title">Your order</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-cart aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-lines" data-cart-lines></div>
+        <div class="cart-summary">
+          <div><span>Subtotal</span><strong data-subtotal>₹0</strong></div>
+          <div><span>Demo tax</span><strong data-tax>₹0</strong></div>
+          <div><span>Pickup fee</span><strong>₹0</strong></div>
+          <div class="summary-total"><span>Total</span><strong data-total>₹0</strong></div>
+        </div>
+        <form class="checkout-form" data-checkout-form>
+          <div class="mode-chip">Pickup only · demo mode</div>
+          <label>
+            Name
+            <input name="name" autocomplete="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Phone
+            <input name="phone" inputmode="tel" autocomplete="tel" placeholder="10 digit mobile number" required>
+          </label>
+          <button class="primary-button full-width" type="submit" data-checkout-button>Confirm demo order</button>
+          <p class="form-note">No payment is collected. This creates a local demo confirmation only.</p>
+        </form>
+      </div>
+    </aside>
+
+    <dialog class="item-dialog" data-item-dialog>
+      <button class="icon-button dialog-close" type="button" data-close-item aria-label="Close item details">×</button>
+      <div data-item-detail></div>
+    </dialog>
+
+    <dialog class="success-dialog" data-success-dialog>
+      <div class="success-card">
+        <span class="success-icon">✓</span>
+        <p class="eyebrow">Demo order confirmed</p>
+        <h2 data-success-order>DOB-DEMO-0001</h2>
+        <p>Your pickup order is saved locally for testing. Live order creation and payment will be connected in the production phase.</p>
+        <div class="success-actions">
+          <a class="primary-button" data-success-track href="track.html">Track demo order</a>
+          <button class="secondary-button" type="button" data-close-success>Continue browsing</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/menu-catalog.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pwa.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "dobara-cafe-functions",
+  "private": true,
+  "engines": {
+    "node": "20"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.1.1",
+    "razorpay": "^2.9.5"
+  }
+}

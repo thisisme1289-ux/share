@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Track order | Dobara cafe</title>
+    <meta name="description" content="Track a demo Dobara cafe pickup order.">
+    <meta name="theme-color" content="#f97316">
+    <link rel="icon" href="images/icons/icon-192.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/ui.css">
+  </head>
+  <body>
+    <main class="tracking-page">
+      <a class="back-link" href="index.html">← Back to cafe</a>
+      <section class="track-card">
+        <p class="eyebrow">Demo tracking</p>
+        <h1 data-track-order>Dobara cafe pickup</h1>
+        <p class="muted" data-track-meta>Local demo order. Production tracking will use secure tokens.</p>
+        <div class="eta-box">
+          <strong>Estimated pickup</strong>
+          <span>20-25 minutes</span>
+        </div>
+        <ol class="timeline" data-timeline>
+          <li class="done"><strong>Order received</strong><span>Demo cart was confirmed</span></li>
+          <li class="done"><strong>Accepted</strong><span>Cafe team receives this in production</span></li>
+          <li class="active"><strong>Preparing</strong><span>Your food is being prepared</span></li>
+          <li><strong>Ready</strong><span>Pickup from Dobara cafe</span></li>
+        </ol>
+        <div class="track-summary" data-track-summary></div>
+        <a class="primary-button full-width" href="tel:+917007420970">Call cafe</a>
+      </section>
+    </main>
+    <script src="js/track.js"></script>
+  </body>
+</html>
