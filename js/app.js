@@ -12,7 +12,6 @@
 
   const els = {
     rail: document.querySelector("[data-category-rail]"),
-    featured: document.querySelector("[data-featured-row]"),
     grid: document.querySelector("[data-menu-grid]"),
     empty: document.querySelector("[data-empty-state]"),
     search: document.querySelector("#menu-search"),
@@ -79,14 +78,6 @@
 
   function renderMenu() {
     const items = filteredItems();
-    const featured = catalog.items.filter((item) => item.featured && item.available).slice(0, 3);
-
-    els.featured.innerHTML = featured.map((item) => `
-      <button class="featured-card" type="button" data-detail="${escapeHtml(item.id)}">
-        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" onerror="this.src='images/temp/default-food.jpg'">
-        <div><strong>${escapeHtml(item.name)}</strong><span>₹${item.price}</span></div>
-      </button>
-    `).join("");
 
     els.grid.innerHTML = items.map(renderMenuCard).join("");
     els.empty.hidden = items.length > 0;
