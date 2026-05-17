@@ -1,4 +1,4 @@
-const CACHE_NAME = "dobara-site-v4";
+const CACHE_NAME = "dobara-site-v5";
 const ASSETS = [
   "index.html",
   "track.html",

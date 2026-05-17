@@ -12,6 +12,8 @@
 
   const els = {
     rail: document.querySelector("[data-category-rail]"),
+    featured: document.querySelector("[data-featured-row]"),
+    featuredHeading: document.querySelector("[data-featured-heading]"),
     grid: document.querySelector("[data-menu-grid]"),
     empty: document.querySelector("[data-empty-state]"),
     search: document.querySelector("#menu-search"),
@@ -78,8 +80,13 @@
 
   function renderMenu() {
     const items = filteredItems();
+    const featured = catalog.items.filter((item) => item.featured && item.available).slice(0, 4);
+    const showFeatured = state.category === "all" && !state.query;
 
-    els.grid.innerHTML = items.map(renderMenuCard).join("");
+    els.featured.hidden = !showFeatured;
+    els.featuredHeading.hidden = !showFeatured;
+    els.featured.innerHTML = showFeatured ? featured.map(renderMenuCard).join("") : "";
+    els.grid.innerHTML = items.filter((item) => !(showFeatured && item.featured)).map(renderMenuCard).join("");
     els.empty.hidden = items.length > 0;
 
     document.querySelectorAll("[data-add]").forEach((button) => {
